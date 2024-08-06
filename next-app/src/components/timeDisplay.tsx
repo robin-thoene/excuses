@@ -60,7 +60,7 @@ const TimeDisplay = (props: ITimeDisplayProps) => {
     return () => clearInterval(interval);
   }, [props.date]);
 
-  return <div className="text-3xl font-bold">{display}</div>;
+  return <div className="text-xl font-bold">{display}</div>;
 };
 
 export default TimeDisplay;

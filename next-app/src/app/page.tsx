@@ -10,10 +10,10 @@ export default function Home() {
   const date = parseISO(dateStr);
   return (
     <main className="h-screen w-screen overflow-auto p-10 flex flex-col items-center">
-      <div className="mb-4">Du hast uns verlassen seit</div>
+      <div className="mb-4">Du hast uns verlassen seit:</div>
       <TimeDisplay date={date} />
       <div className="mt-10">Es tut uns Leid, komm wieder.</div>
-      <div className="mt-10 text-xl">Ein Rudel braucht seinen Leitmolf!</div>
+      <div className="mt-10 text-lg">Ein Rudel braucht seinen Leitmolf!</div>
     </main>
   );
 }
