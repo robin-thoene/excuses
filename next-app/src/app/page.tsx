@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="h-screen w-screen overflow-auto p-10 flex flex-col items-center gap-6 text-xl">
       <TimeDisplay date={date} />
-      <div>Müssen wir schon ohne dich ertragen.</div>
+      <div>müssen wir schon ohne dich ertragen ...</div>
       <img
         src="https://media0.giphy.com/media/l0HlTHgnDtIhkoZOg/giphy.gif?cid=6c09b952g7a7c838aaggpn16vfnvjafhz2xqg866y216st0j&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g"
         alt=""
