@@ -19,7 +19,13 @@ interface ITimeDisplayProps {
   date: Date;
 }
 const TimeDisplay = (props: ITimeDisplayProps) => {
-  const [display, setDisplay] = useState("");
+  const [years, setYears] = useState(0);
+  const [months, setMonths] = useState(0);
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
@@ -53,14 +59,26 @@ const TimeDisplay = (props: ITimeDisplayProps) => {
             years,
           ),
         ) % 60;
-      setDisplay(
-        `${years}Y ${months}M, ${days}D ${hours}H ${minutes}M ${seconds}S`,
-      );
+      setYears(years);
+      setMonths(months);
+      setDays(days);
+      setHours(hours);
+      setMinutes(minutes);
+      setSeconds(seconds);
     }, 1000);
     return () => clearInterval(interval);
   }, [props.date]);
 
-  return <div className="text-xl font-bold">{display}</div>;
+  return (
+    <div className="flex flex-col text-xl font-bold items-center font-mono">
+      <div>{years > 0 && `${years} Jahre`}</div>
+      <div>{months > 0 && `${months} Monate`}</div>
+      <div>{days > 0 && `${days} Tage`}</div>
+      <div>{hours > 0 && `${hours} Stunden`}</div>
+      <div>{minutes > 0 && `${minutes} Minuten`}</div>
+      <div>{`${seconds} Sekunden`}</div>
+    </div>
+  );
 };
 
 export default TimeDisplay;
